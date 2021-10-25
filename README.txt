@@ -10,5 +10,6 @@ Install
            ng version
            ng new hellworld
            cd helloworld
+           code .
            ng serve
            
