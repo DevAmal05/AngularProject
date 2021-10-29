@@ -12,4 +12,11 @@ Install
            cd helloworld
            code .
            ng serve
+
+Component
+           ng g c nom_component
+
+Bootstrap
+           npm install bootstrap
+           
            
