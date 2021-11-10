@@ -1,3 +1,4 @@
+<!--
 <h1>Formation Angular</h1>
 <p>{{name }}</p>
 <p>{{dates | date:'full' }}</p>
@@ -17,30 +18,61 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+      
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Handle</th>
-      </tr>
+      </tr> 
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
+      <tr> 
         <td>Mark</td>
         <td>Otto</td>
         <td>@mdo</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+   
     </tbody>
   </table>
+  -->
+<form [formGroup]="myForm" (ngSubmit)="save()">
+<div class="container">
+  <div class="col-3">
+<label>Firstname</label>
+<input class="form-control" type="text"
+ name="firstname" formControlName="firstname">
+<div *ngIf="firstname.touched && firstname.invalid">
+  <small class="text-danger" *ngIf="firstname.errors.required">Firstname is required</small>
+  <small class="text-danger" *ngIf="firstname.errors.pattern">Invalid Firstname</small>
+  <small class="text-danger" *ngIf="firstname.errors.minlength">Firstname must contain 3 characters at least</small>
+</div>
+
+
+<label>Lastname</label>
+<input class="form-control" type="text" name="lastname" formControlName="lastname">
+<div *ngIf="lastname.touched && lastname.invalid">
+  <small class="text-danger" *ngIf="lastname.errors.required">Lastname is required</small>
+  <small class="text-danger" *ngIf="lastname.errors.pattern">Invalid Lastname</small>
+  <small class="text-danger" *ngIf="lastname.errors.minlength">Lastname must contain 3 characters at least</small>
+</div>
+
+
+<label>Phone</label>
+<input class="form-control" type="text" name="phone" formControlName="phone">
+<div *ngIf="phone.touched && phone.invalid">
+  <small class="text-danger" *ngIf="phone.errors.required">Phone is required</small>
+  <small class="text-danger" *ngIf="phone.errors.pattern">Invalid phone number</small>
+</div>  
+
+<label>Email</label>
+<input class="form-control" type="email" name="email" formControlName="email">
+<div *ngIf="email.touched && email.invalid">
+  <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+  <small class="text-danger" *ngIf="email.errors.email">Invalid Email</small>
+
+</div>
+</div>
+<br>
+<button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Register</button>
+</div>
+
+</form>
