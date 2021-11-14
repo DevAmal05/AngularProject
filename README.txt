@@ -19,4 +19,8 @@ Component
 Bootstrap
            npm install bootstrap
            
-           
+Model
+           ng g class nom_model
+
+Toastr
+            npm install ngx-toastr@13 --save           
