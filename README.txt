@@ -23,4 +23,5 @@ Model
            ng g class nom_model
 
 Toastr
+            https://www.npmjs.com/package/ngx-toastr
             npm install ngx-toastr@13 --save           
