@@ -8,7 +8,16 @@ import { HomeComponent } from './home/home.component';
 import { Page404Component } from './page404/page404.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
-@NgModule({
+import {ButtonModule} from 'primeng/button';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {MenubarModule} from 'primeng/menubar';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
+@NgModule({   
   declarations: [
     AppComponent,
     TestComponent,
@@ -16,7 +25,13 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     Page404Component
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    MenubarModule,
+    TabMenuModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
+    ButtonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule

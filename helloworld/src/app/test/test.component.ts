@@ -1,6 +1,8 @@
+import { ToastrService } from 'ngx-toastr';
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import { User } from '../user';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -18,7 +20,7 @@ myForm:FormGroup
    {id:1,firstname:"Ahmed"},
    {id:2,firstname:"Ali"},
  ]
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder,private toastr: ToastrService) { 
     let formControls={
       firstname:new FormControl('',[
         Validators.required,
@@ -59,7 +61,10 @@ myForm:FormGroup
   ngOnInit(): void {
   }
   save() {
-    console.log(this.myForm.value);
+   let data=this.myForm.value;
+   let user=new User(data.firstname,data.lastname,null,data.phone,data.email);
+   console.log(user);
+   this.toastr.success('Welcome!', 'User added successfully!');
   }
 
 }
