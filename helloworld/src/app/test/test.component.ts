@@ -3,12 +3,16 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
 import { User } from '../user';
+import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
+  items: MenuItem[];
+
+  activeItem: MenuItem;
 myForm:FormGroup
 
   title="hello world";
@@ -59,7 +63,16 @@ myForm:FormGroup
   }
 
   ngOnInit(): void {
-  }
+    this.items = [
+      {label: 'Home', icon: 'pi pi-fw pi-home'},
+      {label: 'Login', icon: 'pi pi-fw pi-calendar'},
+      {label: 'Register', icon: 'pi pi-fw pi-pencil'},
+   
+      {label: 'Contacter nous', icon: 'pi pi-fw pi-cog'}
+  ];
+
+  this.activeItem = this.items[0];
+  }  
   save() {
    let data=this.myForm.value;
    let user=new User(data.firstname,data.lastname,null,data.phone,data.email);

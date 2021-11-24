@@ -9,12 +9,15 @@ import { Page404Component } from './page404/page404.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import {ButtonModule} from 'primeng/button';
-import {TabMenuModule} from 'primeng/tabmenu';
+
+
 import {MenubarModule} from 'primeng/menubar';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import {TabMenuModule} from 'primeng/tabmenu';
+
 
 
 @NgModule({   
@@ -25,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
     Page404Component
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
+    
     MenubarModule,
     TabMenuModule,
     CommonModule,
