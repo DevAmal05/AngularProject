@@ -32,4 +32,8 @@ Primeng
            Angular.json
            "node_modules/primeicons/primeicons.css",
            "node_modules/primeng/resources/themes/saga-blue/theme.css",
-           "node_modules/primeng/resources/primeng.min.css"        
+           "node_modules/primeng/resources/primeng.min.css"
+
+Firebase
+           npm install firebase@8 --save
+           npm install --save firebase @angular/fire@6        
