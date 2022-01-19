@@ -36,4 +36,7 @@ Primeng
 
 Firebase
            npm install firebase@8 --save
-           npm install --save firebase @angular/fire@6        
+           npm install --save firebase @angular/fire@6  
+
+Service
+           ng g s nom_service      
