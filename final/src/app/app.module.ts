@@ -12,6 +12,12 @@ import { environment } from 'src/environments/environment';
 import { UsersComponent } from './users/users.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,12 +29,18 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatDialogModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    BrowserAnimationsModule,
 
   ],
   providers: [],

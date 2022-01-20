@@ -39,4 +39,7 @@ Firebase
            npm install --save firebase @angular/fire@6  
 
 Service
-           ng g s nom_service      
+           ng g s nom_service     
+
+Angular Material
+           ng add @angular/material 
